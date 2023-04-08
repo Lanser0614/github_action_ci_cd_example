@@ -41,6 +41,7 @@ jobs:
   create-deployment-artifacts:
     name: Create deployment artifacts
     runs-on: ubuntu-latest
+    needs: phpunit
     outputs:
       DEPLOYMENT_MATRIX: ${{ steps.export-deployment-matrix.outputs.DEPLOYMENT_MATRIX }}
     steps:
