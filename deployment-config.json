@@ -1,0 +1,13 @@
+
+[
+    {
+        "name": "server-1",
+        "ip": "64.226.101.88",
+        "username": "root",
+        "password": "16051998May",
+        "port": "22",
+        "beforeHooks": "chmod -R 0777 ${RELEASE_PATH}/storage",
+        "afterHooks": "",
+        "path": "/var/www/html"
+    }
+]
