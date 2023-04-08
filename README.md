@@ -12,3 +12,6 @@ and into Secret option copy your valid
 .env file and insert into input.
 After that you can use CI CD in your 
 Laravel application
+
+All configuration is located in 
+.github/workflows/deploy-application.yml file
