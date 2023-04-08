@@ -2,10 +2,10 @@
 [
     {
         "name": "server-1",
-        "ip": "64.226.101.88",
-        "username": "root",
-        "password": "16051998May",
-        "port": "22",
+        "ip": "your_server_ip",
+        "username": "you_server_username",
+        "password": "you_server_password",
+        "port": "you_server_ssh_port",
         "beforeHooks": "chmod -R 0777 ${RELEASE_PATH}/storage",
         "afterHooks": "",
         "path": "/var/www/html"
