@@ -15,3 +15,5 @@ Laravel application
 
 All configuration is located in 
 .github/workflows/deploy-application.yml file
+
+primary source: https://philo.dev/how-to-use-github-actions-build-matrix-to-deploy-artifacts-to-multiple-servers/
