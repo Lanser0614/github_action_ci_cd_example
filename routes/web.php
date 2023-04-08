@@ -15,5 +15,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
 
-    return response()->json(["message" => "ok"]);
+    return response()->json(["message" => "ci cd is working"]);
 });
