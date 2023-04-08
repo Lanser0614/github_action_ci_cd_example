@@ -7,7 +7,8 @@ on:
 jobs:
   phpunit:
     runs-on: ubuntu-latest
-
+    container:
+      image: kirschbaumdevelopment/laravel-test-runner:8.0
 
     services:
       mysql:
@@ -20,26 +21,18 @@ jobs:
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
 
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Configure PHP 8.0
-        uses: shivammathur/setup-php@master
+      - uses: actions/checkout@v1
         with:
-          php-version: 8.0
-          extensions: mbstring, ctype, fileinfo, openssl, PDO, bcmath, json, tokenizer, xml
-
-
-      - name: Configure PHP 8.0
-        uses: shivammathur/setup-php@master
-        with:
-          php-version: 8.0
-          extensions: mbstring, ctype, fileinfo, openssl, PDO, bcmath, json, tokenizer, xml
-
+          fetch-depth: 1
 
       - name: Install composer dependencies
         run: |
-          composer update --no-scripts
+          composer install --no-scripts
 
+      - name: Prepare Laravel Application
+        run: |
+          cp .env.ci .env
+          php artisan key:generate
 
       - name: Run Testsuite
         run: vendor/bin/phpunit tests/
