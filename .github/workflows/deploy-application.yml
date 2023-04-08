@@ -26,9 +26,9 @@ jobs:
           php-version: 8.0
           extensions: mbstring, ctype, fileinfo, openssl, PDO, bcmath, json, tokenizer, xml
 
-      - name: Composer install
+      - name: Composer update
         run: |
-          composer install --no-dev --no-interaction --prefer-dist
+          composer update --no-dev --no-interaction --prefer-dist
       - name: Create deployment artifact
         env:
           GITHUB_SHA: ${{ github.sha }}
