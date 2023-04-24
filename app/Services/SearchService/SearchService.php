@@ -78,13 +78,13 @@ class SearchService extends BaseService
     }
 
     /**
-     * @param $type
+     * @param string|null $type
      * @param string $preparedQuery
-     * @param $cityId
-     * @param string $lang
+     * @param int|null $cityId
+     * @param string|null $lang
      * @return AnonymousResourceCollection|Collection|null
      */
-    private function getResults($type, string $preparedQuery, $cityId, string $lang): Collection|AnonymousResourceCollection|null
+    private function getResults(?string $type, string $preparedQuery, ?int $cityId, ?string $lang): AnonymousResourceCollection|Collection|null
     {
         if ($type) {
             $results = $this->getSpecificTypeResults($type, $preparedQuery, $cityId, $lang);
